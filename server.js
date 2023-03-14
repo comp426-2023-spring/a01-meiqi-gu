@@ -37,9 +37,10 @@ fs.readFile('./public/index.html', 'utf-8', (err, data) => {
 // 3. end with the data that you are reading in from ./public/index.html.
 const server = http.createServer((req, res) => {
     res.write(200); 
+    res.setHeader('Header', `text/html`);
+    res.write(data);
+    res.end();  
 })
-
-
 
 
 // Start the `server` const listening on the port defined by argument in your `port` const. 
