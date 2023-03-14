@@ -5,7 +5,7 @@ const fs = require('fs');
 // Require minimist module (make sure you install this one via npm).
 const mini = require('minimist');
 // Use minimist to process one argument `--port=` on the command line after `node server.js`.
-const port = mini(process.argv.slice(0))
+const port = mini(process.argv)
 // Define a const `port` using the argument from the command line. 
 
 // Make this const default to port 3000 if there is no argument given for `--port`.
@@ -21,12 +21,13 @@ if (port === null || port==="") {
 // If there is an error, put it on the console error and return. 
 // Do not be nice about exiting.
 
-if (err) {
-    console.error(err)
-    return
-}
-
-
+fs.readFile('./public/index.html', 'utf-8', (err, data) => {
+    if (err) {
+        console.error(err); 
+        return; 
+    }
+    console.log(data); 
+    }); 
 
 // Define a const `server` as an arrow function using http.createServer. 
 // Use the documentation for the node.js http module. 
