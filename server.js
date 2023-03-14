@@ -24,12 +24,12 @@ fs.readFile('./public/index.html', 'utf8', (err, data) => {
         return; 
     }
     const server = http.createServer((req, res) => {
-        res.setHeader(`content-type`, `text/html`);
+        res.setHeader('content-type', 'text/html');
         res.write('200'); 
         res.write(data);
         res.end();  
     })
-
+ 
     server.listen(port); 
     console.log(`Server listening on port ${port}`); 
     
