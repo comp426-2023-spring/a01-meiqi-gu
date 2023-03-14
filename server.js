@@ -21,7 +21,10 @@ if (port == empty()) {
 // If there is an error, put it on the console error and return. 
 // Do not be nice about exiting.
 
-
+if (err) {
+    console.error(err)
+    return
+}
 
 
 
