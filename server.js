@@ -25,7 +25,7 @@ fs.readFile('./public/index.html', 'utf8', (err, data) => {
     }
     const server = http.createServer((req, res) => {
         res.write('200'); 
-        res.setHeader('Header', `text/html`);
+        res.setHeader(`content-type`, `text/html`);
         res.write(data);
         res.end();  
     })
