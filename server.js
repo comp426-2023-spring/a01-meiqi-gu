@@ -9,7 +9,7 @@ const port = mini(process.argv.slice(0))
 // Define a const `port` using the argument from the command line. 
 
 // Make this const default to port 3000 if there is no argument given for `--port`.
-if (port == empty()) {
+if (isEmpty(port)) {
     port = 3000; 
 }
 
