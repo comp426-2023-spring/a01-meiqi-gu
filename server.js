@@ -18,13 +18,13 @@ const port = args.port || 3000;
 // If there is an error, put it on the console error and return. 
 // Do not be nice about exiting.
 
-fs.readFile('./public/index.html', 'utf8', (err, data) => {
+fs.readFile(`./public/index.html`, 'utf8', (err, data) => {
     if (err) {
         console.error(err); 
         return; 
     }
     const server = http.createServer((req, res) => {
-        res.setHeader('content-type', 'text/html');
+        res.setHeader(`content-type`, `text/html`);
         res.write('200'); 
         res.write(data);
         res.end();  
